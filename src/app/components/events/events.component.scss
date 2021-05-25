@@ -1,0 +1,132 @@
+@import './src/app/bootstrap/scss/variables';
+
+.recent-events-title {
+  margin-top: 86px;
+  margin-bottom: 16px;
+  padding-top: 38px;
+  font-size: 34px;
+  color: $main-font-color;
+  text-align: center;
+}
+
+.recent-events-text {
+  width: 70%;
+  margin: 0 auto;
+  color: #eaecef;
+  padding: 10px;
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+.card-body {
+  margin: 20px;
+  background: linear-gradient(#263a6e, #100d29);
+  border-left: .5px solid white;
+  box-shadow: rgba(0, 0, 0, 0.86) 0 22px 70px 4px;
+}
+
+.main-btn {
+  white-space: nowrap;
+  margin-top: 60px;
+  background: #0b1a33;
+
+  &:hover {
+    background: rgba(160, 136, 95, .5);
+    border: 1px solid $secondary-background-color;
+  }
+}
+
+.card {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+  text-align: center;
+
+  box-shadow: inset 0 0 0 1px $secondary-background-color;
+  color: $main-font-color;
+  font-size: inherit;
+
+  position: relative;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.draw {
+  transition: color .25s;
+
+  &::before,
+  &::after {
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: #ffd745;
+    border-right-color: #ffd745;
+    transition: width .25s ease-out,
+    height .25s ease-out .25s;
+  }
+
+  &:hover::after {
+    border-bottom-color: #ffd745;
+    border-left-color: #ffd745;
+    transition: border-color 0s ease-out .5s,
+    width .25s ease-out .5s,
+    height .25s ease-out .75s;
+  }
+}
+
+.recent-events-background {
+  background: linear-gradient(-45deg, #100d29, rgba(0, 0, 0, .5), #100d29, rgba(17, 30, 78, .7));
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  backdrop-filter: blur(30px);
+  box-shadow: rgba(0, 0, 0, 0.86) 0 22px 70px 4px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+

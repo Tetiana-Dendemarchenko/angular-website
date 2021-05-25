@@ -1,0 +1,302 @@
+@import './src/app/bootstrap/scss/variables';
+
+.management-container {
+
+  &__invitation {
+    width: 400px;
+    margin-top: 20px;
+    padding: 20px 20px;
+    color: #eaecef;
+    text-indent: 50px;
+    letter-spacing: 3px;
+    font-size: 14px;
+    text-align: justify;
+    word-break: break-all;
+    border-left: .5px solid $secondary-background-color;
+  }
+}
+
+.management-container__button {
+  position: absolute;
+  padding: 60px 300px;
+  top: 300px;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  background: rgba(160, 136, 95, .05);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: .5px solid $secondary-background-color;
+  }
+}
+
+.table {
+  z-index: 100;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(20, 26, 42, .9);
+  backdrop-filter: blur(10px);
+  padding-left: 10%;
+  padding-right: 10%;
+
+  table {
+    position: absolute;
+    top: 160px;
+    width: 80%;
+    min-height: 60vh;
+    white-space: nowrap;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    border: .5px solid $secondary-background-color;
+    outline: none;
+    table-layout: fixed;
+    box-shadow: rgba(0, 0, 0, 0.86) 0 22px 70px 4px;
+
+    & th {
+      font-size: 22px;
+      border-bottom: .1px solid $secondary-background-color;
+    }
+  }
+
+  & td, th {
+    vertical-align: middle;
+    border-top: .1px solid $secondary-background-color;
+  }
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,500&display=swap");
+
+$drkblue: #070c20;
+$blue: #111b47;
+$ltblue: #15e0ff;
+$goldish: #a0885f;
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -3;
+  }
+
+  &:before {
+    right: 0;
+    bottom: -19;
+    height: 30em;
+    width: 30em;
+    border-radius: 30em;
+    background: linear-gradient($blue, $drkblue);
+    opacity: .5;
+    align-self: flex-end;
+    animation: gradient-fade 8s ease-in-out 3s infinite alternate;
+  }
+
+  &:after {
+    $circle-unit: 10em;
+    top: 0;
+    left: 30;
+    height: $circle-unit;
+    width: $circle-unit;
+    border-radius: $circle-unit;
+    background: linear-gradient($goldish, $drkblue);
+    opacity: .3;
+    animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+  }
+
+  &__text-wrapper {
+    position: relative;
+    padding: 2em;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      $circle-unit: 13em;
+      z-index: -1;
+      top: 30%;
+      right: 80%;
+      width: $circle-unit;
+      height: $circle-unit;
+      border-radius: $circle-unit;
+      background: linear-gradient($ltblue, $drkblue);
+      opacity: .05;
+      animation: rotation 10s linear infinite;
+    }
+
+    &:after {
+      $circle-unit: 20em;
+      z-index: -1;
+      bottom: -#{$circle-unit};
+      width: $circle-unit;
+      height: $circle-unit;
+      border-radius: $circle-unit;
+      background: linear-gradient($goldish, $drkblue);
+      opacity: .1;
+      animation: rotation 7s linear infinite;
+    }
+  }
+}
+
+.arrow {
+  z-index: 1000;
+  opacity: .5;
+  position: absolute;
+
+  &--top {
+    top: 0;
+    left: -5em;
+  }
+
+  &--bottom {
+    bottom: 0;
+    right: 3em;
+  }
+}
+
+.circle {
+  transform: translate(50%, -50%) rotate(0deg);
+  transform-origin: center;
+
+  &--ltblue {
+    $circle-unit: 20em;
+    height: $circle-unit;
+    width: $circle-unit;
+    border-radius: $circle-unit;
+    background: linear-gradient($ltblue, $blue);
+  }
+}
+
+.dotted-circle {
+  position: absolute;
+  top: 140px;
+  right: 60px;
+  opacity: .1;
+  animation: rotation 38s linear infinite;
+}
+
+.draw-in {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 10;
+  animation: draw 15s ease-in-out alternate infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.item-to {
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: ease;
+}
+
+.bounce-2 {
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+}
+
+.bounce-3 {
+  animation-name: bounce-3;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient-fade {
+  from {
+    transform: translate(10%, -10%) rotate(0deg);
+  }
+  to {
+    transform: translate(50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes gradient-fade-alt {
+  from {
+    transform: translate(-20%, 20%) rotate(0deg);
+  }
+  to {
+    transform: translate(-60%, 60%) rotate(360deg);
+  }
+}

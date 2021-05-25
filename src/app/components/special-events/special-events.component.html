@@ -1,0 +1,21 @@
+<div class="special-events-background">
+  <h1 class="special-events-title">OUR SPECIAL EVENTS</h1>
+  <p class="special-events-text">We are welcome you again! Only our registered users have an access to the special
+    events. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda beatae consequatur esse
+    facilis hic
+    incidunt ipsa laboriosam libero magni, nam omnis quam quis quo tenetur totam unde ut veniam!</p>
+  <div class="row recent-events">
+    <div class="col-sm-6" *ngFor="let specialEvent of specialEvents">
+      <div class="card draw">
+        <div class="card-body">
+          <h5 class="card-title">{{specialEvent['name']}}</h5>
+          <p class="card-text">{{specialEvent['description']}}</p>
+          <a href="#" class="btn btn-success main-btn">Buy ticket</a>
+        </div>
+        <div class="card-footer text-muted" style="text-align: start;">
+          {{specialEvent['date']}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

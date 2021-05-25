@@ -1,0 +1,251 @@
+@import './src/app/bootstrap/scss/variables';
+
+#registration-form-container {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  padding-top: 140px;
+}
+
+.registration-form {
+  z-index: 1;
+  position: relative;
+  width: 40%;
+  height: 100%;
+  margin: 0 auto 300px;
+  box-shadow: rgba(0, 0, 0, 0.86) 0 22px 70px 4px;
+  border: .5px solid black;
+
+  &__title {
+    padding-top: 16px;
+    font-size: 34px;
+    color: $main-font-color;
+    text-align: center;
+    animation: blinker 8s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: .1;
+    }
+  }
+}
+
+.invitation-singIn {
+  margin-top: 80px;
+  color: $main-font-color;
+  text-align: center;
+
+  a {
+    color: white;
+    font-size: 18px;
+
+    &:hover {
+      text-decoration: none;
+      text-shadow: 1px 1px 0 lighten($main-font-color, 15%), 2px 2px 0 lighten($main-font-color, 10%), 3px 3px 0 lighten($main-font-color, 5%);
+      transform: translate(-3px, -3px);
+    }
+  }
+}
+
+.main-btn {
+  width: 40vw;
+  white-space: nowrap;
+
+  &::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  &::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: hsl(38, 25%, 50%);
+    z-index: -1;
+    transition: transform 3s ease;
+  }
+}
+
+.borders div {
+  position: absolute;
+
+  &:nth-child(1) {
+    top: 80px;
+    left: 42%;
+    border-top: .5px solid $secondary-background-color;
+    border-left: 4px solid $secondary-background-color;
+
+    @include box(800, 30);
+  }
+
+  &:nth-child(2) {
+    top: 560px;
+    left: 270px;
+    border-bottom: .5px solid $secondary-background-color;
+    border-right: .5px solid $secondary-background-color;
+
+    @include box(100, 220);
+  }
+
+  &:nth-child(3) {
+    top: 680px;
+    left: 240px;
+    border-bottom: 5px solid $secondary-background-color;
+    border-left: .5px solid $secondary-background-color;
+
+    @include box(180, 50);
+  }
+
+  &:nth-child(4) {
+    top: 150px;
+    left: 90px;
+    border-left: .5px solid $secondary-background-color;
+
+    @include box(300, 320);
+  }
+}
+
+.register {
+
+  &__title {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+  }
+
+  &__text {
+    color: #eaecef;
+    padding: 20px;
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+    font-size: 12px;
+  }
+}
+
+.background-container {
+  @keyframes boxMove {
+    0% {
+      transform: scale(var(--initialScale)) rotate(var(--initialAngle));
+    }
+    100% {
+      transform: scale(var(--endScale)) rotate(var(--endAngle));
+    }
+  }
+
+  .box {
+    top: calc(50% - 10vmin);
+    left: calc(50% - 10vmin);
+    width: 20vmin;
+    height: 20vmin;
+    position: absolute;
+    background-color: #0f2c58;
+    background-image: radial-gradient(circle at 50% 10%, #100c2b 5%, transparent 80%),
+    radial-gradient(circle at 50% 90%, #121030 1%, transparent);
+    border-radius: 3vmin;
+    box-shadow: rgba(160, 136, 95, .9);
+    animation: boxMove 6s linear infinite;
+  }
+
+  .box0 {
+    --initialScale: 0.30;
+    --endScale: 1.00;
+    --initialAngle: +10deg;
+    --endAngle: +00deg;
+  }
+
+  .box1 {
+    --initialScale: 1.00;
+    --endScale: 1.50;
+    --initialAngle: +00deg;
+    --endAngle: -10deg;
+  }
+
+  .box2 {
+    --initialScale: 1.50;
+    --endScale: 2.00;
+    --initialAngle: -10deg;
+    --endAngle: -20deg;
+  }
+
+  .box3 {
+    --initialScale: 2.00;
+    --endScale: 3.00;
+    --initialAngle: -20deg;
+    --endAngle: -25deg;
+  }
+
+  .box4 {
+    --initialScale: 3.00;
+    --endScale: 4.00;
+    --initialAngle: -25deg;
+    --endAngle: -30deg;
+  }
+
+  .box5 {
+    --initialScale: 4.00;
+    --endScale: 5.00;
+    --initialAngle: -30deg;
+    --endAngle: -40deg;
+  }
+
+  .box6 {
+    --initialScale: 5.00;
+    --endScale: 6.50;
+    --initialAngle: -40deg;
+    --endAngle: -50deg;
+  }
+
+  .box7 {
+    --initialScale: 6.50;
+    --endScale: 8.00;
+    --initialAngle: -50deg;
+    --endAngle: -60deg;
+  }
+
+  .box8 {
+    --initialScale: 8.00;
+    --endScale: 10.0;
+    --initialAngle: -60deg;
+    --endAngle: -70deg;
+  }
+
+  .box9 {
+    --initialScale: 10.0;
+    --endScale: 14.0;
+    --initialAngle: -70deg;
+    --endAngle: -85deg;
+  }
+
+  .box10 {
+    --initialScale: 14.0;
+    --endScale: 20.0;
+    --initialAngle: -85deg;
+    --endAngle: -99deg;
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .box0 {
+    animation: boxMove 14s linear infinite, show 14s linear infinite;
+  }
+}

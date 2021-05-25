@@ -1,0 +1,100 @@
+@import './src/app/bootstrap/scss/variables';
+
+.page-not-found {
+  font-family: $font-family-base;
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  background: $main-background-color;
+
+  &__title {
+    margin-top: 70px;
+    color: $main-font-color;
+    text-align: center;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  padding-top: 10%;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container .loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #0c0921;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container .loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-size: 100px 180px;
+  background: linear-gradient(to top, transparent, rgba(160, 136, 95, .4)) no-repeat;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.container .loader::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-size: 100px 180px;
+  background: $secondary-background-color;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 10px $secondary-background-color,
+  0 0 20px $secondary-background-color,
+  0 0 30px $secondary-background-color,
+  0 0 40px $secondary-background-color,
+  0 0 50px $secondary-background-color,
+  0 0 60px $secondary-background-color,
+  0 0 70px $secondary-background-color,
+  0 0 80px $secondary-background-color,
+  0 0 90px $secondary-background-color,
+  0 0 100px $secondary-background-color;
+}
+
+.container .loader span {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #142136;
+  border-radius: 50%;
+}
+
+.explore-invitation {
+  color: $main-font-color;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 40px;
+}

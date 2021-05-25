@@ -1,0 +1,130 @@
+@import './src/app/bootstrap/scss/variables';
+
+h1 {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 34px;
+  color: $main-font-color;
+}
+
+.text {
+  color: white;
+  padding: 10px;
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,500&display=swap");
+
+$drkblue: #070c20;
+$blue: #111b47;
+$ltblue: #15e0ff;
+$goldish: #a0885f;
+
+.main {
+
+  &:after {
+    $circle-unit: 10em;
+    top: 0;
+    left: 30px;
+    height: $circle-unit;
+    width: $circle-unit;
+    border-radius: $circle-unit;
+    background: linear-gradient($goldish, $drkblue);
+    opacity: .3;
+    animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+  }
+}
+
+.arrow {
+  z-index: 1000;
+  opacity: .5;
+  position: absolute;
+
+  &--top {
+    top: 0;
+    left: -5em;
+  }
+
+  &--bottom {
+    bottom: 0;
+    right: 3em;
+  }
+}
+
+.dotted-circle {
+  position: absolute;
+  top: 140px;
+  right: 60px;
+  opacity: .1;
+  animation: rotation 38s linear infinite;
+}
+
+.item-to {
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: ease;
+}
+
+.bounce-2 {
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+}
+
+.bounce-3 {
+  animation-name: bounce-3;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

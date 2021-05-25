@@ -1,0 +1,41 @@
+@import './src/app/bootstrap/scss/variables';
+
+.archive {
+  padding-top: 450px;
+
+  & p {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 34px;
+    color: $main-font-color;
+  }
+}
+
+.container {
+  max-height: 500px;
+  color: white;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.archive-list {
+  background: rgba(160, 136, 95, .4);
+  border-top: 1px solid $secondary-background-color;
+  border-left: 1px solid white;
+
+  & li {
+    background: $main-background-color;
+  }
+
+  & .postId {
+    font-size: 22px;
+    font-weight: 800;
+    opacity: .3;
+  }
+}

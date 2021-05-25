@@ -1,0 +1,26 @@
+$font-family-base: "Gill Sans", sans-serif;
+$main-font-color: #a0885f;
+$main-background-color: #100c2b;
+$secondary-background-color: #a0885f;
+
+.main-btn {
+  margin-top: 30px;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 4px 80px;
+  color: #f7f7f7;
+  background: transparent;
+  border: .3px solid $secondary-background-color;
+  text-align: center;
+
+  &:hover {
+    background-color: rgba(193, 163, 114, .2);
+  }
+}
+
+@mixin box($box-width, $box-height) {
+  width: $box-width * 1px;
+  height: $box-height * 1px;
+}

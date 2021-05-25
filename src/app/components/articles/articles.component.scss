@@ -1,0 +1,206 @@
+@import './src/app/bootstrap/scss/variables';
+
+.articles-list-title {
+  text-align: center;
+  margin-top: 90px;
+  font-size: 34px;
+  color: $main-font-color;
+}
+
+.list-group {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.list-group .card {
+  position: relative;
+  width: 286px;
+  height: 420px;
+  background: #0b1a33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .2);
+  overflow: hidden;
+}
+
+.list-group:hover .card {
+  opacity: .2;
+}
+
+.list-group .card:hover {
+  opacity: 1;
+}
+
+.list-group .card::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 50%;
+  background: rgba(255, 255, 255, .1);
+  pointer-events: none;
+}
+
+.list-group .card .content {
+  padding: 30px;
+  text-align: center;
+}
+
+.list-group .card .content h2 {
+  position: absolute;
+  right: 34px;
+  font-size: 4rem;
+  font-weight: 800;
+  color: $secondary-background-color;
+  z-index: 1;
+  opacity: .3;
+  transition: .5s;
+}
+
+.list-group .card:hover .content h2 {
+  opacity: 1;
+  transform: translateX(-70px);
+}
+
+.list-group .card .content h3 {
+  position: relative;
+  color: white;
+  font-size: 1.5em;
+  z-index: 2;
+  opacity: .5;
+  letter-spacing: 1px;
+  transition: .5s;
+}
+
+.list-group .card:hover .content h3,
+.list-group .card:hover .content p {
+  opacity: 1;
+}
+
+.list-group .card .content p {
+  position: relative;
+  color: white;
+  font-size: 1em;
+  z-index: 2;
+  opacity: .5;
+  font-weight: 300;
+  transition: .5s;
+}
+
+.list-group .card .content a {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 4px 24px;
+  background-color: #0b1a33;
+  color: white;
+  border: .5px solid $secondary-background-color;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.list-group .card span {
+  transition: .5s;
+  opacity: 0;
+}
+
+.list-group .card:hover span {
+  opacity: 1;
+}
+
+.list-group .card span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #a0885f);
+  animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.list-group .card span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #00ffff);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.list-group .card span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #70e5ff);
+  animation: animate3 2s linear infinite;
+}
+
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.list-group .card span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #35476f);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.main-btn {
+  width: 40%;
+  padding: 10px 0;
+  margin-top: 570px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border: .5px solid $secondary-background-color;
+}
+

@@ -1,0 +1,41 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark"
+     style="background-color: #142136; position: fixed; width: 100%;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" routerLink="/main-page" routerLinkActive="active">ANGULAR WEBSITE</a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/main-page" routerLinkActive="active">Main<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/events" routerLinkActive="active">Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/special" routerLinkActive="active">Special events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/articles" routerLinkActive="active">Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/management" routerLinkActive="active">Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/login" routerLinkActive="active">Sign in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/registration" routerLinkActive="active">Join
+          us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()"
+           routerLink="/registration" routerLinkActive="active">Sign out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

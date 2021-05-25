@@ -1,0 +1,79 @@
+<div class="login-form-wrapper">
+  <form [formGroup]="loginForm" (ngSubmit)="signIn()" class="login-form">
+    <h4 class="login-form-title">{{loginTitle | uppercase}}</h4><br>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+      </div>
+      <input class="form-control"
+             placeholder="Email address"
+             type="email"
+             formControlName="email"
+             required>
+    </div>
+
+    <div *ngIf="loginForm.controls['email'].invalid &&
+        (loginForm.controls['email'].dirty ||
+        loginForm.controls['email'].touched)"
+         class="alert alert-danger">
+      <div *ngIf="loginForm.controls['email'].errors">
+        Please enter a valid email address
+      </div>
+    </div>
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+      </div>
+      <input class="form-control"
+             placeholder="Password"
+             type="password"
+             formControlName="password"
+             required>
+    </div>
+    <div *ngIf="loginForm.controls['password'].invalid &&
+        (loginForm.controls['password'].dirty ||
+        loginForm.controls['password'].touched)"
+         class="alert alert-danger">
+      <div *ngIf="loginForm.controls['password'].errors">
+        Please enter a password
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="main-btn"
+              [disabled]="loginForm.pristine ||
+              loginForm.invalid">Sign in
+      </button>
+    </div>
+    <p class="invitation-for-registration">Not registered yet? <a style="margin-left: 10px" routerLink="/registration">
+      Join us!</a></p>
+  </form>
+  <div class="box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="borders">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="signIn">
+      <h4 class="singIn__title">Signing in</h4>
+      <p class="signIn__text"
+         style="color: #eaecef; padding: 20px; text-indent: 50px; text-align: justify; letter-spacing: 3px; font-size: 12px;">
+        would give you an access to our special events. Only registered users would be able to
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis dolorem ducimus fuga harum modi nam
+        nostrum odit officia omnis pariatur, quam quod repellat repellendus sequi unde ut. Aut, placeat.</p>
+    </div>
+  </div>
+</div>
+
